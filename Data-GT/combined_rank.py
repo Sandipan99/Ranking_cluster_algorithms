@@ -23,7 +23,6 @@ def check_for_cycle(net_w1, l, algo):
     ft.close()
     return 1
 
-
 fs = open("abalone/all_results")
 algo = {}
 temp = []
@@ -62,18 +61,4 @@ else:
     print('has cycle')
 
 
-#	for i in xrange(len(feat_vector)):
-#		if(len(net_w[i])==0):
-#			acl.append(1)
-#			print "acyclic " +str(ite)
-#			break
 
-#fu=open("select_val_k","w")
-#for obj in acl:
-#	fu.write(str(obj))
-#	fu.write("\n")
-#fu.close()
-#print acl
-#print acl1
-#print len(acl)
-#print len(acl1)

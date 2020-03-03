@@ -21,12 +21,10 @@ mid2 = []
 mid = []
 I_omega = 0.0
 for line1 in comm_football:
-    #print(f'line - {line1}')
     temp = line1.split("\t")
-    #print(temp)
     for i in range(len(temp)):
         mid1.append(int(temp[i]))
-    #print(f'mid1 - {mid1}')
+
     count = 0
     for line2 in comm_louvain:
         temp1 = line2.split("\t")
@@ -35,10 +33,9 @@ for line1 in comm_football:
             mid2.append(int(temp1[j]))
 
         mid = list(set(mid1) & set(mid2))
-        #print(len(mid1),len(mid2))
         val1 = (N*(len(mid)))/(len(mid1)*len(mid2))
         val2 = len(mid)/N
-        if val1>0:
+        if val1 > 0:
             I_omega += val2*math.log(val1, 2)
         mid2 = []
         mid = []
