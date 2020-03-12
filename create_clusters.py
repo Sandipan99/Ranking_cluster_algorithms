@@ -7,9 +7,9 @@ def saveOutputlinewise(fname, clustering):
 
     for i,value in enumerate(clustering.labels_):
         if value not in clusters:
-            clusters[value] = [str(i)]
+            clusters[value] = [str(i+1)]
         else:
-            clusters[value].append(str(i))
+            clusters[value].append(str(i+1))
 
     with open(fname, 'w') as ft:
         for key in clusters:
@@ -23,19 +23,21 @@ def saveOutput(fname, clustering): # saves output with each line as the label an
 
 
 
-data = np.loadtxt('Data-GT/abalone/feat_mat',delimiter='	 ')
+data = np.loadtxt('Data-GT/Whitewine/rank_features',delimiter=',')
+data = np.transpose(data)
+print(data.shape)
 
-
+'''
 print('fitting clusters')
-clustering_spec = SpectralClustering(n_clusters=28, assign_labels="discretize").fit(data)
+clustering_spec = SpectralClustering(n_clusters=7, assign_labels="discretize").fit(data)
 print('fitting finished')
 
-saveOutputlinewise('Data-GT/abalone/spectral_cluster_abalone', clustering_spec)
-saveOutput('Data-GT/plos-one/abalone/spectral_cluster', clustering_spec)
-
+saveOutputlinewise('Data-GT/Whitewine/spectral_cluster_rank', clustering_spec)
+saveOutput('Data-GT/plos-one/Whitewine/spectral_cluster_rank', clustering_spec)
+'''
 print('fitting clusters')
-clustering_b = Birch(n_clusters=None).fit(data)
+clustering_b = Birch(n_clusters=7).fit(data)
 print('fitting finished')
 
-saveOutputlinewise('Data-GT/abalone/birch_cluster_abalone', clustering_b)
-saveOutput('Data-GT/plos-one/abalone/birch_cluster', clustering_b)
+saveOutputlinewise('Data-GT/Whitewine/birch_cluster_rank', clustering_b)
+saveOutput('Data-GT/plos-one/Whitewine/birch_cluster_rank', clustering_b)

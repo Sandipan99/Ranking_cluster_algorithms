@@ -25,18 +25,19 @@ else:
 #print str(mid[i+1])+"\t"+str(count)
 temp = []
 entr = 0.0
+print(comm)
 for line in comm:
-	temp=line.split("\t")
-	a=float(temp[0])/nodes
-	val=a*math.log(a,2)*(-1)
-	entr+=val*float(temp[1])
+	temp = line.split("\t")
+	a = float(temp[0])/nodes
+	val = a*math.log(a, 2)*(-1)
+	entr += val*float(temp[1])
 #fs.close()
 entr_hk = 0.0
 for line in comm:
-	temp=line.split("\t")
+	temp = line.split("\t")
 	#print temp[0]+"\t"+temp[1]
-	a=float(temp[0])*float(temp[1])/nodes
-	val=a*math.log(a,2)*(-1)
+	a = float(temp[0])*float(temp[1])/nodes
+	val = a*math.log(a, 2)*(-1)
 	#print val
-	entr_hk+=val
+	entr_hk += val
 print(str(comm_count)+"\t"+str(entr)+"\t"+str(entr_hk))

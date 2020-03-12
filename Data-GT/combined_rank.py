@@ -16,14 +16,15 @@ def check_for_cycle(net_w1, l, algo):
             net_w1[rem].append(100)
         else:
             return 0
-    ft = open("abalone/combined_rank","w")
+    print(rank)
+    ft = open("Whitewine/combined_rank","w")
     for i in range(len(rank)):
         ft.write(rank[i])
         ft.write("\n")
     ft.close()
     return 1
 
-fs = open("abalone/all_results")
+fs = open("Whitewine/all_results_w_labels")
 algo = {}
 temp = []
 count = 0
