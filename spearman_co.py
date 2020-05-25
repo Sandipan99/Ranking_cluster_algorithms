@@ -1,7 +1,7 @@
 # takes as input a matrix with each column representing a ranking.....
 # outputs kendal tau similarity values between every pair of rankings......
 
-fs = open('Data-GT/Whitewine/all_ranks_use')
+fs = open('Data-GT/MNIST/all_ranks_use')
 temp = []
 rank = []
 for line in fs:

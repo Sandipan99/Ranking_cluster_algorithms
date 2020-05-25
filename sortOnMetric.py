@@ -9,9 +9,9 @@ ranks = {}
 
 for id_ in metric_id:
     rank = {}
-    with open('Data-GT/Whitewine/all_results_w_labels') as fs:
+    with open('Data-GT/MNIST/all_results_w_labels') as fs:
         for line in fs:
-            temp = line.strip().split('\t')
+            temp = line.strip().split('  ')
             rank[temp[0]] = float(temp[id_])
 
     ranks[metrics[id_]] = []
@@ -21,8 +21,8 @@ for id_ in metric_id:
 #print(ranks['pur'])
 print(ranks['db'])
 
-with open('Data-GT/Whitewine/all_ranks', 'w') as ft:
-    for i in range(20):
+with open('Data-GT/MNIST/all_ranks', 'w') as ft:
+    for i in range(10):
         str_ = ''
         for j in metric_id:
             str_+=ranks[metrics[j]][i]+'\t'

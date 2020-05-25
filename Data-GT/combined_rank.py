@@ -17,20 +17,20 @@ def check_for_cycle(net_w1, l, algo):
         else:
             return 0
     print(rank)
-    ft = open("Whitewine/combined_rank","w")
+    ft = open("MNIST/combined_rank","w")
     for i in range(len(rank)):
         ft.write(rank[i])
         ft.write("\n")
     ft.close()
     return 1
 
-fs = open("Whitewine/all_results_w_labels")
+fs = open("MNIST/all_results_w_labels")
 algo = {}
 temp = []
 count = 0
 feat_vector = []
 for line in fs:
-    temp = line.strip().split("\t")
+    temp = line.strip().split("  ")
     algo[count] = temp[0]
     count += 1
     str1 = temp[3]+"\t"+temp[4]+"\t"+temp[5]

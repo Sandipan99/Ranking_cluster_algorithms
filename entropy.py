@@ -25,7 +25,7 @@ else:
 #print str(mid[i+1])+"\t"+str(count)
 temp = []
 entr = 0.0
-print(comm)
+#print(comm)
 for line in comm:
 	temp = line.split("\t")
 	a = float(temp[0])/nodes

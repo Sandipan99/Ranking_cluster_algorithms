@@ -21,5 +21,5 @@ def convert(arg_1, arg2):
       ft.write("\n")
   ft.close()
 
-path = 'Data-GT/Whitewine/'
-convert('Data-GT/Whitewine/wwin_ground_truth','Data-GT/Whitewine/gt_linewise')
+#path = 'Data-GT/Whitewine/'
+convert('Data-GT/MNIST/MNIST_gt_map','Data-GT/MNIST/gt_linewise')
